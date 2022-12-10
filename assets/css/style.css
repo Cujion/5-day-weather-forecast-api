@@ -15,8 +15,13 @@ font-weight: 800;
 }
 
 h2 {
-font-size: 32px;
+font-size: 40px;
 font-weight: 600;
+}
+
+p {
+font-size: 28px;
+font-weight: 500;
 }
 
 .custom-bg {
