@@ -17,40 +17,42 @@
     <title>5 Day Weather Forecast</title>
 </head>
 
-<body>
-    <header class="row navbar custom-bg">
+<body class="custom-bg">
+    <header class="row navbar">
         <nav class="col-12 md-12 text-white">
             <div class="col-12 text-center">
                 <h1>Weather Dashboard</h1>
             </div>
         </nav>
     </header>
-    <main class="row min-vh-100 custom-bg">
-        <section class="col-3 px-4">
+    <main class="row min-vh-100">
+        <section class="col-lg-3 col-s-12 px-4">
             <aside class="p-2 w-100 bg-secondary">
                 <h2 class="search-title text-center">Search for a City:</h2>
                 <input class="city-input mb-3 p-2 w-100 text-center" placeholder="Enter City" id="city-input">
                 <button type="submit" class="btn-lg btn-dark bi bi-search w-100 border border-white" id="searchbtn"> Search</button>
             </aside>
-            <aside id="search-history">
-                <ul class="search-list p-2 w-100 border-top border-dark bg-secondary" id="previous-search">
-                    <!-- <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
-                    <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il> -->
-                </ul>
-            </aside>
+            <section class="row">
+                <aside class="col-12" id="search-history">
+                    <ul class="search-list w-100 px-2 border-top border-dark bg-secondary" id="previous-search">
+                        <!-- <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il> -->
+                        <!-- <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il>
+                        <il><button type="submit" id="searchbtn" class="btn-lg btn-dark w-100 my-2 border border-white">Previous City</button></il> -->
+                    </ul>
+                </aside>
+            </section>
         </section>
-        <section class="col-9" id="weather-container">
+        <section class="col-lg-9 col-s-12" id="weather-container">
             <div class="row justify-content-center mb-4">
                 <div class="col-11 bg-secondary border border-white text-white" id="current-city">
                     <h2 class="text-center" id="city-title">New York (12/10/2022)<div class="bi bi-brightness-high my-2"></div></h2>
@@ -65,35 +67,35 @@
                 </div>
             </div>
             <section class="row justify-content-center mb-4">
-                <div class="col-2 bg-secondary mx-2 border border-white text-white">
+                <div class="col-lg-2 col-md-5 col-sm-11 bg-secondary mb-2 mx-2 border border-white text-white">
                     <h3 id="day-1">(12/11/2022)</h3>
                     <div class="bi bi-brightness-high"></div>
                     <div class="mb-4" id="temp-1">Temp:</div>
                     <div class="mb-4" id="wind-1">Wind: </div>
                     <div class="mb-4" id="humidity-1">Humidity:</div>
                 </div>
-                <div class="col-2 bg-secondary mx-2 border border-white text-white">
+                <div class="col-lg-2 col-md-5 col-sm-11 bg-secondary mb-2 mx-2 border border-white text-white">
                     <h3 id="day-2">(12/12/2022)</h3>
                     <div class="bi bi-brightness-high"></div>
                     <div class="mb-4" id="temp-2">Temp:</div>
                     <div class="mb-4" id="wind-2">Wind: </div>
                     <div class="mb-4" id="humidity-2">Humidity:</div>
                 </div>
-                <div class="col-2 bg-secondary mx-2 border border-white text-white">
+                <div class="col-lg-2 col-md-4 col-sm-11 bg-secondary mb-2 mx-2 border border-white text-white">
                     <h3 id="day-3">(12/13/2022)</h3>
                     <div class="bi bi-brightness-high"></div>
                     <div class="mb-4" id="temp-3">Temp:</div>
                     <div class="mb-4" id="wind-3">Wind: </div>
                     <div class="mb-4" id="humidity-3">Humidity:</div>
                 </div>
-                <div class="col-2 bg-secondary mx-2 border border-white text-white">
+                <div class="col-lg-2 col-md-4 col-sm-11 bg-secondary mb-2 mx-2 border border-white text-white">
                     <h3 id="day-4">(12/14/2022)</h3>
                     <div class="bi bi-brightness-high"></div>
                     <div class="mb-4" id="temp-4">Temp:</div>
                     <div class="mb-4" id="wind-4">Wind: </div>
                     <div class="mb-4" id="humidity-4">Humidity:</div>
                 </div>
-                <div class="col-2 bg-secondary mx-2 border border-white text-white">
+                <div class="col-lg-2 col-md-4 col-sm-11 bg-secondary mb-2 mx-2 border border-white text-white">
                     <h3 id="day-5">(12/15/2022)</h3>
                     <div class="bi bi-brightness-high"></div>
                     <div class="mb-4" id="temp-5">Temp:</div>
