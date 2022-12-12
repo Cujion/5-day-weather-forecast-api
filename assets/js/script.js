@@ -1,4 +1,4 @@
-
+// global variables
 var cityInput = document.querySelector("#city-input");
 var searchBtn = document.querySelector("#searchbtn");
 var clearSearchBtn = document.querySelector("#clearsearch");
@@ -180,6 +180,7 @@ var displayFiveDay = function(city) {
     var currentHumidity5 = document.createElement("div");
     currentHumidity5.className = "current-humidity5 mb-2";
     currentHumidity5.textContent = "Humidity: " + city.list[39].main.humidity + " %";
+    // appending container to all the children elements for each day
     fiveDay.appendChild(dayOne);
     dayOne.append(dateOne, weatherIcon, currentTemp, currentWind, currentHumidity);
     fiveDay.appendChild(dayTwo);
@@ -191,10 +192,10 @@ var displayFiveDay = function(city) {
     fiveDay.appendChild(dayFive);
     dayFive.append(dateFive, weatherIcon5, currentTemp5, currentWind5, currentHumidity5);
 };
-
+// fetch results function to be able to display data
 var fetchResults = function(cityInput) {
 var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}`;
-
+// fetch response
 fetch(apiUrl)
     .then(function (response) {
         return response.json();
@@ -208,10 +209,11 @@ fetch(apiUrl)
         console.log(error);
     });
 };
-
+// function to grab search text input and fetch results on search criteria
 var handleSearch = function() {
     notify.classList.add("hidden")
     var search = cityInput.value.trim();
+    // if no search input bootstrap modal will display
     if (search === "") {
         notify.classList.remove("hidden");
     } else {
@@ -219,11 +221,11 @@ var handleSearch = function() {
         search = "";
     }
 };
-
+// event listener for search button pressed
 searchBtn.addEventListener("click", handleSearch);
-
+// checking local storage for an input
 var previousCity = JSON.parse(localStorage.getItem("previousCity") || "[]");
-
+// grabbing search input and storing it in local storage 
 var saveSearchedCity = function(search) {
     var search = cityInput.value.trim();
     if (previousCity.includes(search)) {
@@ -234,7 +236,7 @@ var saveSearchedCity = function(search) {
         postPreviousCity();
     }
 };
-
+// creating button for previous cities search that are stored in local storage
 var postPreviousCity = function() {
         searchHistory.innerHTML = "";
     for (i = 0; i < previousCity.length; i++) {
@@ -253,7 +255,7 @@ var postPreviousCity = function() {
 };
 
 
-
+// clear search button to clear local storage on click
 clearSearchBtn.addEventListener("click", function() {
     localStorage.clear();
   });
