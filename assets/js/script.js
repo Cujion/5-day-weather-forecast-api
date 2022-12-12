@@ -21,7 +21,6 @@ var displayCurrentCity = function(city) {
     var cityName = document.createElement("h2");
     cityName.className = "city-name text-center";
     cityName.textContent = city.city.name + " " + "(" + dayjs().format("M/D/YYYY") + ")";
-    console.log(cityName.innerHTML)
     // current weather icon
     var icon = city.list[0].weather[0].icon;
     var weatherIcon = document.createElement("img");
@@ -54,7 +53,6 @@ var displayFiveDay = function(city) {
     var dateOne = document.createElement("h3");
     dateOne.className = "date-one text-center mt-2";
     dateOne.textContent = "(" + dayjs().add(1, "day").format("M/D/YYYY") + ")";
-    console.log(dateOne.innerHTML)
     // day one weather icon
     var icon = city.list[7].weather[0].icon;
     var weatherIcon = document.createElement("img");
@@ -82,7 +80,6 @@ var displayFiveDay = function(city) {
     var dateTwo = document.createElement("h3");
     dateTwo.className = "date-two text-center mt-2";
     dateTwo.textContent = "(" + dayjs().add(2, "day").format("M/D/YYYY") + ")";
-    console.log(dateTwo.innerHTML)
     // day two weather icon
     var icon2 = city.list[15].weather[0].icon;
     var weatherIcon2 = document.createElement("img");
@@ -110,7 +107,6 @@ var displayFiveDay = function(city) {
     var dateThree = document.createElement("h3");
     dateThree.className = "date-three text-center mt-2";
     dateThree.textContent = "(" + dayjs().add(3, "day").format("M/D/YYYY") + ")";
-    console.log(dateThree.innerHTML)
     // day three weather icon
     var icon3 = city.list[23].weather[0].icon;
     var weatherIcon3 = document.createElement("img");
@@ -138,7 +134,6 @@ var displayFiveDay = function(city) {
     var dateFour = document.createElement("h3");
     dateFour.className = "date-four text-center mt-2";
     dateFour.textContent = "(" + dayjs().add(4, "day").format("M/D/YYYY") + ")";
-    console.log(dateFour.innerHTML)
     // day four weather icon
     var icon4 = city.list[31].weather[0].icon;
     var weatherIcon4 = document.createElement("img");
@@ -166,7 +161,6 @@ var displayFiveDay = function(city) {
     var dateFive = document.createElement("h3");
     dateFive.className = "date-five text-center mt-2";
     dateFive.textContent = "(" + dayjs().add(5, "day").format("M/D/YYYY") + ")";
-    console.log(dateFive.innerHTML)
     // day five weather icon
     var icon5 = city.list[39].weather[0].icon;
     var weatherIcon5 = document.createElement("img");
@@ -207,7 +201,6 @@ fetch(apiUrl)
     })
     .then(function (data) {
         saveSearchedCity(data.city.name);
-        console.log(data);
         displayCurrentCity(data);
         displayFiveDay(data);
     })
@@ -224,7 +217,6 @@ var handleSearch = function() {
     } else {
         fetchResults(search);
         search = "";
-        console.log(search);
     }
 };
 
@@ -246,7 +238,7 @@ var saveSearchedCity = function(search) {
 var postPreviousCity = function() {
         searchHistory.innerHTML = "";
     for (i = 0; i < previousCity.length; i++) {
-        var previousSearchBtn = document.createElement("button")
+        var previousSearchBtn = document.createElement("button");
         previousSearchBtn.className = "previous-btn btn-lg btn-dark w-100 my-2 border border-white"
         previousSearchBtn.textContent = previousCity[i];
         if (searchHistory.innerHTML === null) {
