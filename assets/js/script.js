@@ -30,7 +30,7 @@ var displayCurrentCity = function(city) {
     cityName.className = "city-name text-center";
     cityName.textContent = city.name + " " + "(" + dayjs().format("M/D/YYYY") + ")";
     console.log(cityName.innerHTML)
-    // weather icon
+    // current weather icon
     var icon = city.list[0].weather[0].icon;
     var weatherIcon = document.createElement("img");
     weatherIcon.className = "weather-icon mx-auto d-block";
@@ -55,142 +55,142 @@ var displayCurrentCity = function(city) {
 
 var displayFiveDay = function(city) {
     fiveDay.innerHTML = null;
-    // current city container
+    // day one container
     var dayOne = document.createElement("div");
     dayOne.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
-    // current city name
+    // date one
     var dateOne = document.createElement("h3");
     dateOne.className = "date-one text-center";
     dateOne.textContent = "(" + dayjs().add(1, "day").format("M/D/YYYY") + ")";
     console.log(dateOne.innerHTML)
-    // weather icon
+    // day one weather icon
     var icon = city.list[7].weather[0].icon;
     var weatherIcon = document.createElement("img");
     weatherIcon.className = "weather-icon mx-auto d-block";
     weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png"
-    // current temp 
+    // day one temp
     var currentTemp = document.createElement("div");
     currentTemp.className = "current-temp";
     var currentTempK = city.list[7].main.temp;
     var currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
     currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉"
-    // current wind
+    // day one wind
     var currentWind = document.createElement("div");
     currentWind.className = "current-wind";
     currentWind.textContent = "Wind: " + city.list[7].wind.speed + " MPH";
-    // current humidity
+    // day one humidity
     var currentHumidity = document.createElement("div");
     currentHumidity.className = "current-humidity"
     currentHumidity.textContent = "Humidity: " + city.list[7].main.humidity + " %";
 
-    // current city container
+    // day two container
     var dayTwo = document.createElement("div");
     dayTwo.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
-    // current city name
+    // date two
     var dateTwo = document.createElement("h3");
     dateTwo.className = "date-two text-center";
     dateTwo.textContent = "(" + dayjs().add(2, "day").format("M/D/YYYY") + ")";
     console.log(dateTwo.innerHTML)
-    // weather icon
+    // day two weather icon
     var icon2 = city.list[15].weather[0].icon;
     var weatherIcon2 = document.createElement("img");
     weatherIcon2.className = "weather-icon2 mx-auto d-block";
     weatherIcon2.src = "https://openweathermap.org/img/w/"+icon2+".png"
-    // current temp 
+    // day two temp
     var currentTemp2 = document.createElement("div");
     currentTemp2.className = "current-temp2";
     var currentTempK2 = city.list[15].main.temp;
     var currentTempF2 = ((currentTempK2 - 273.15) * 1.8) + 32;
     currentTemp2.textContent = "Temperature: " + currentTempF2.toFixed() + " ℉"
-    // current wind
+    // day two wind
     var currentWind2 = document.createElement("div");
     currentWind2.className = "current-wind2";
     currentWind2.textContent = "Wind: " + city.list[15].wind.speed + " MPH";
-    // current humidity
+    // day two humidity
     var currentHumidity2 = document.createElement("div");
     currentHumidity2.className = "current-humidity2"
     currentHumidity2.textContent = "Humidity: " + city.list[15].main.humidity + " %";
 
-        // current city container
+    // day three container
     var dayThree = document.createElement("div");
     dayThree.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
-    // current city name
+    // date three
     var dateThree = document.createElement("h3");
     dateThree.className = "date-three text-center";
     dateThree.textContent = "(" + dayjs().add(3, "day").format("M/D/YYYY") + ")";
     console.log(dateThree.innerHTML)
-    // weather icon
+    // day three weather icon
     var icon3 = city.list[23].weather[0].icon;
     var weatherIcon3 = document.createElement("img");
     weatherIcon3.className = "weather-icon3 mx-auto d-block";
     weatherIcon3.src = "https://openweathermap.org/img/w/"+icon3+".png"
-    // current temp 
+    // day three temp
     var currentTemp3 = document.createElement("div");
     currentTemp3.className = "current-temp3";
     var currentTempK3 = city.list[23].main.temp;
     var currentTempF3 = ((currentTempK3 - 273.15) * 1.8) + 32;
     currentTemp3.textContent = "Temperature: " + currentTempF3.toFixed() + " ℉"
-    // current wind
+    // day three wind
     var currentWind3 = document.createElement("div");
     currentWind3.className = "current-wind3";
     currentWind3.textContent = "Wind: " + city.list[23].wind.speed + " MPH";
-    // current humidity
+    // day three humidity
     var currentHumidity3 = document.createElement("div");
     currentHumidity3.className = "current-humidity3"
     currentHumidity3.textContent = "Humidity: " + city.list[23].main.humidity + " %";
 
-        // current city container
+    // day four container
     var dayFour = document.createElement("div");
     dayFour.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
-    // current city name
+    // date four
     var dateFour = document.createElement("h3");
     dateFour.className = "date-four text-center";
     dateFour.textContent = "(" + dayjs().add(4, "day").format("M/D/YYYY") + ")";
     console.log(dateFour.innerHTML)
-    // weather icon
+    // day four weather icon
     var icon4 = city.list[31].weather[0].icon;
     var weatherIcon4 = document.createElement("img");
     weatherIcon4.className = "weather-icon4 mx-auto d-block";
     weatherIcon4.src = "https://openweathermap.org/img/w/"+icon4+".png"
-    // current temp 
+    // day four temp
     var currentTemp4 = document.createElement("div");
     currentTemp4.className = "current-temp4";
     var currentTempK4 = city.list[31].main.temp;
     var currentTempF4 = ((currentTempK4 - 273.15) * 1.8) + 32;
     currentTemp4.textContent = "Temperature: " + currentTempF4.toFixed() + " ℉"
-    // current wind
+    // day four wind
     var currentWind4 = document.createElement("div");
     currentWind4.className = "current-wind4";
     currentWind4.textContent = "Wind: " + city.list[31].wind.speed + " MPH";
-    // current humidity
+    // day four humidity
     var currentHumidity4 = document.createElement("div");
     currentHumidity4.className = "current-humidity4"
     currentHumidity4.textContent = "Humidity: " + city.list[31].main.humidity + " %";
 
-        // current city container
+    // day five container
     var dayFive = document.createElement("div");
     dayFive.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
-    // current city name
+    // date five
     var dateFive = document.createElement("h3");
     dateFive.className = "date-five text-center";
     dateFive.textContent = "(" + dayjs().add(5, "day").format("M/D/YYYY") + ")";
     console.log(dateFive.innerHTML)
-    // weather icon
+    // day five weather icon
     var icon5 = city.list[39].weather[0].icon;
     var weatherIcon5 = document.createElement("img");
     weatherIcon5.className = "weather-icon5 mx-auto d-block";
     weatherIcon5.src = "https://openweathermap.org/img/w/"+icon5+".png"
-    // current temp 
+    // day five temp
     var currentTemp5 = document.createElement("div");
     currentTemp5.className = "current-temp5";
     var currentTempK5 = city.list[39].main.temp;
     var currentTempF5 = ((currentTempK5 - 273.15) * 1.8) + 32;
     currentTemp5.textContent = "Temperature: " + currentTempF5.toFixed() + " ℉"
-    // current wind
+    // day five wind
     var currentWind5 = document.createElement("div");
     currentWind5.className = "current-wind5";
     currentWind5.textContent = "Wind: " + city.list[39].wind.speed + " MPH";
-    // current humidity
+    // day five humidity
     var currentHumidity5 = document.createElement("div");
     currentHumidity5.className = "current-humidity5"
     currentHumidity5.textContent = "Humidity: " + city.list[39].main.humidity + " %";
