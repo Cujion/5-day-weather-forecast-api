@@ -19,6 +19,11 @@ font-size: 40px;
 font-weight: 600;
 }
 
+h3 {
+    font-size: 22px;
+    font-weight: 300px;
+}
+
 p {
 font-size: 28px;
 font-weight: 500;

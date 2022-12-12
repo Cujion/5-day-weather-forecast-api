@@ -60,7 +60,7 @@ var displayFiveDay = function(city) {
     dayOne.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
     // date one
     var dateOne = document.createElement("h3");
-    dateOne.className = "date-one text-center";
+    dateOne.className = "date-one text-center mt-2";
     dateOne.textContent = "(" + dayjs().add(1, "day").format("M/D/YYYY") + ")";
     console.log(dateOne.innerHTML)
     // day one weather icon
@@ -70,17 +70,17 @@ var displayFiveDay = function(city) {
     weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png"
     // day one temp
     var currentTemp = document.createElement("div");
-    currentTemp.className = "current-temp";
+    currentTemp.className = "current-temp mb-1";
     var currentTempK = city.list[7].main.temp;
     var currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
     currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉"
     // day one wind
     var currentWind = document.createElement("div");
-    currentWind.className = "current-wind";
+    currentWind.className = "current-wind mb-1";
     currentWind.textContent = "Wind: " + city.list[7].wind.speed + " MPH";
     // day one humidity
     var currentHumidity = document.createElement("div");
-    currentHumidity.className = "current-humidity"
+    currentHumidity.className = "current-humidity mb-2"
     currentHumidity.textContent = "Humidity: " + city.list[7].main.humidity + " %";
 
     // day two container
@@ -88,7 +88,7 @@ var displayFiveDay = function(city) {
     dayTwo.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
     // date two
     var dateTwo = document.createElement("h3");
-    dateTwo.className = "date-two text-center";
+    dateTwo.className = "date-two text-center mt-2";
     dateTwo.textContent = "(" + dayjs().add(2, "day").format("M/D/YYYY") + ")";
     console.log(dateTwo.innerHTML)
     // day two weather icon
@@ -98,17 +98,17 @@ var displayFiveDay = function(city) {
     weatherIcon2.src = "https://openweathermap.org/img/w/"+icon2+".png"
     // day two temp
     var currentTemp2 = document.createElement("div");
-    currentTemp2.className = "current-temp2";
+    currentTemp2.className = "current-temp2 mb-1";
     var currentTempK2 = city.list[15].main.temp;
     var currentTempF2 = ((currentTempK2 - 273.15) * 1.8) + 32;
     currentTemp2.textContent = "Temperature: " + currentTempF2.toFixed() + " ℉"
     // day two wind
     var currentWind2 = document.createElement("div");
-    currentWind2.className = "current-wind2";
+    currentWind2.className = "current-wind2 mb-1";
     currentWind2.textContent = "Wind: " + city.list[15].wind.speed + " MPH";
     // day two humidity
     var currentHumidity2 = document.createElement("div");
-    currentHumidity2.className = "current-humidity2"
+    currentHumidity2.className = "current-humidity2 mb-2"
     currentHumidity2.textContent = "Humidity: " + city.list[15].main.humidity + " %";
 
     // day three container
@@ -116,7 +116,7 @@ var displayFiveDay = function(city) {
     dayThree.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
     // date three
     var dateThree = document.createElement("h3");
-    dateThree.className = "date-three text-center";
+    dateThree.className = "date-three text-center mt-2";
     dateThree.textContent = "(" + dayjs().add(3, "day").format("M/D/YYYY") + ")";
     console.log(dateThree.innerHTML)
     // day three weather icon
@@ -126,17 +126,17 @@ var displayFiveDay = function(city) {
     weatherIcon3.src = "https://openweathermap.org/img/w/"+icon3+".png"
     // day three temp
     var currentTemp3 = document.createElement("div");
-    currentTemp3.className = "current-temp3";
+    currentTemp3.className = "current-temp3 mb-1";
     var currentTempK3 = city.list[23].main.temp;
     var currentTempF3 = ((currentTempK3 - 273.15) * 1.8) + 32;
     currentTemp3.textContent = "Temperature: " + currentTempF3.toFixed() + " ℉"
     // day three wind
     var currentWind3 = document.createElement("div");
-    currentWind3.className = "current-wind3";
+    currentWind3.className = "current-wind3 mb-1";
     currentWind3.textContent = "Wind: " + city.list[23].wind.speed + " MPH";
     // day three humidity
     var currentHumidity3 = document.createElement("div");
-    currentHumidity3.className = "current-humidity3"
+    currentHumidity3.className = "current-humidity3 mb-2"
     currentHumidity3.textContent = "Humidity: " + city.list[23].main.humidity + " %";
 
     // day four container
@@ -144,7 +144,7 @@ var displayFiveDay = function(city) {
     dayFour.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
     // date four
     var dateFour = document.createElement("h3");
-    dateFour.className = "date-four text-center";
+    dateFour.className = "date-four text-center mt-2";
     dateFour.textContent = "(" + dayjs().add(4, "day").format("M/D/YYYY") + ")";
     console.log(dateFour.innerHTML)
     // day four weather icon
@@ -154,17 +154,17 @@ var displayFiveDay = function(city) {
     weatherIcon4.src = "https://openweathermap.org/img/w/"+icon4+".png"
     // day four temp
     var currentTemp4 = document.createElement("div");
-    currentTemp4.className = "current-temp4";
+    currentTemp4.className = "current-temp4 mb-1";
     var currentTempK4 = city.list[31].main.temp;
     var currentTempF4 = ((currentTempK4 - 273.15) * 1.8) + 32;
     currentTemp4.textContent = "Temperature: " + currentTempF4.toFixed() + " ℉"
     // day four wind
     var currentWind4 = document.createElement("div");
-    currentWind4.className = "current-wind4";
+    currentWind4.className = "current-wind4 mb-1";
     currentWind4.textContent = "Wind: " + city.list[31].wind.speed + " MPH";
     // day four humidity
     var currentHumidity4 = document.createElement("div");
-    currentHumidity4.className = "current-humidity4"
+    currentHumidity4.className = "current-humidity4 mb-2"
     currentHumidity4.textContent = "Humidity: " + city.list[31].main.humidity + " %";
 
     // day five container
@@ -172,7 +172,7 @@ var displayFiveDay = function(city) {
     dayFive.className = "col-lg-2 col-md-5 col-sm-12 bg-secondary mb-2 mx-2 border border-white text-white";
     // date five
     var dateFive = document.createElement("h3");
-    dateFive.className = "date-five text-center";
+    dateFive.className = "date-five text-center mt-2";
     dateFive.textContent = "(" + dayjs().add(5, "day").format("M/D/YYYY") + ")";
     console.log(dateFive.innerHTML)
     // day five weather icon
@@ -182,17 +182,17 @@ var displayFiveDay = function(city) {
     weatherIcon5.src = "https://openweathermap.org/img/w/"+icon5+".png"
     // day five temp
     var currentTemp5 = document.createElement("div");
-    currentTemp5.className = "current-temp5";
+    currentTemp5.className = "current-temp5 mb-1";
     var currentTempK5 = city.list[39].main.temp;
     var currentTempF5 = ((currentTempK5 - 273.15) * 1.8) + 32;
     currentTemp5.textContent = "Temperature: " + currentTempF5.toFixed() + " ℉"
     // day five wind
     var currentWind5 = document.createElement("div");
-    currentWind5.className = "current-wind5";
+    currentWind5.className = "current-wind5 mb-1";
     currentWind5.textContent = "Wind: " + city.list[39].wind.speed + " MPH";
     // day five humidity
     var currentHumidity5 = document.createElement("div");
-    currentHumidity5.className = "current-humidity5"
+    currentHumidity5.className = "current-humidity5 mb-2"
     currentHumidity5.textContent = "Humidity: " + city.list[39].main.humidity + " %";
     fiveDay.appendChild(dayOne);
     dayOne.append(dateOne, weatherIcon, currentTemp, currentWind, currentHumidity);
