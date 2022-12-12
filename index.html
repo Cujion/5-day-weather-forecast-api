@@ -30,7 +30,8 @@
             <aside class="p-2 w-100 bg-secondary mb-2">
                 <h2 class="search-title text-center">Search for a City:</h2>
                 <input class="mb-3 p-2 w-100 text-center" placeholder="Enter City" id="city-input">
-                <button type="submit" class="btn-lg btn-dark bi bi-search w-100 border border-white" id="searchbtn"> Search</button>
+                <button type="submit" class="btn-lg btn-dark bi bi-search w-100 border border-white mb-2" id="searchbtn"> Search</button>
+                <button type="submit" class="btn-lg btn-dark w-100 border border-white" id="clearsearch">Clear Search</button>
             </aside>
             <div class="alert alert-warning hidden" id="notify" role="alert">
                 Please enter a city name
@@ -41,7 +42,7 @@
             </section>
         </section>
         <section class="col-lg-9 col-sm-12" id="weather-container">
-            <div class="row justify-content-center mb-4" id="current-day">
+            <div class="row justify-content-center mb-4 mt-2" id="current-day">
             </div>
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-11 col-sm-11 bg-secondary m-3 border border-white text-white">
@@ -54,7 +55,6 @@
     </main>
       <!-- SCRIPT SOURCE FOR DAYJS -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
-  <!-- <script> var currDate = $("#currentDay"); currDate.text(new Date()); </script> -->
     <script src="./assets/js/script.js"></script>
 </body>
 

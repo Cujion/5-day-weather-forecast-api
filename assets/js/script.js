@@ -1,21 +1,14 @@
-// // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={40aa3e5aaeb88d084ff46beb25e47310}
-
-// var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=new york&appid=40aa3e5aaeb88d084ff46beb25e47310"
-
-// fetch(apiUrl)
-// .then(res => res.json())
-// .then(data => console.log(data))
-
-// 0,7,15,23,31,39
 
 var cityInput = document.querySelector("#city-input");
 var searchBtn = document.querySelector("#searchbtn");
+var clearSearchBtn = document.querySelector("#clearsearch");
+var previousBtn = document.querySelector("previous-btn");
 var notify = document.querySelector("#notify");
 var searchHistory = document.querySelector("#search-history");
 var weatherContainer = document.querySelector("#weather-container");
 var currentDay = document.querySelector("#current-day");
 var fiveDay = document.querySelector("#five-day");
-
+var apiKey = "40aa3e5aaeb88d084ff46beb25e47310";
 var today = dayjs();
 $("#currentDay").text(today.format("dddd, MMMM D, YYYY h:mm A"));
 
@@ -33,20 +26,20 @@ var displayCurrentCity = function(city) {
     var icon = city.list[0].weather[0].icon;
     var weatherIcon = document.createElement("img");
     weatherIcon.className = "weather-icon mx-auto d-block";
-    weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png"
+    weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png";
     // current temp 
     var currentTemp = document.createElement("p");
     currentTemp.className = "current-temp ml-2";
     var currentTempK = city.list[0].main.temp;
     var currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
-    currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉"
+    currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉";
     // current wind
     var currentWind = document.createElement("p");
     currentWind.className = "current-wind ml-2";
     currentWind.textContent = "Wind: " + city.list[0].wind.speed + " MPH";
     // current humidity
     var currentHumidity = document.createElement("p");
-    currentHumidity.className = "current-humidity ml-2"
+    currentHumidity.className = "current-humidity ml-2";
     currentHumidity.textContent = "Humidity: " + city.list[0].main.humidity + " %";
     currentDay.appendChild(currentCity);
     currentCity.append(cityName, weatherIcon, currentTemp, currentWind, currentHumidity);
@@ -66,13 +59,13 @@ var displayFiveDay = function(city) {
     var icon = city.list[7].weather[0].icon;
     var weatherIcon = document.createElement("img");
     weatherIcon.className = "weather-icon mx-auto d-block";
-    weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png"
+    weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png";
     // day one temp
     var currentTemp = document.createElement("div");
     currentTemp.className = "current-temp mb-1";
     var currentTempK = city.list[7].main.temp;
     var currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
-    currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉"
+    currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉";
     // day one wind
     var currentWind = document.createElement("div");
     currentWind.className = "current-wind mb-1";
@@ -94,20 +87,20 @@ var displayFiveDay = function(city) {
     var icon2 = city.list[15].weather[0].icon;
     var weatherIcon2 = document.createElement("img");
     weatherIcon2.className = "weather-icon2 mx-auto d-block";
-    weatherIcon2.src = "https://openweathermap.org/img/w/"+icon2+".png"
+    weatherIcon2.src = "https://openweathermap.org/img/w/"+icon2+".png";
     // day two temp
     var currentTemp2 = document.createElement("div");
     currentTemp2.className = "current-temp2 mb-1";
     var currentTempK2 = city.list[15].main.temp;
     var currentTempF2 = ((currentTempK2 - 273.15) * 1.8) + 32;
-    currentTemp2.textContent = "Temperature: " + currentTempF2.toFixed() + " ℉"
+    currentTemp2.textContent = "Temperature: " + currentTempF2.toFixed() + " ℉";
     // day two wind
     var currentWind2 = document.createElement("div");
     currentWind2.className = "current-wind2 mb-1";
     currentWind2.textContent = "Wind: " + city.list[15].wind.speed + " MPH";
     // day two humidity
     var currentHumidity2 = document.createElement("div");
-    currentHumidity2.className = "current-humidity2 mb-2"
+    currentHumidity2.className = "current-humidity2 mb-2";
     currentHumidity2.textContent = "Humidity: " + city.list[15].main.humidity + " %";
 
     // day three container
@@ -122,20 +115,20 @@ var displayFiveDay = function(city) {
     var icon3 = city.list[23].weather[0].icon;
     var weatherIcon3 = document.createElement("img");
     weatherIcon3.className = "weather-icon3 mx-auto d-block";
-    weatherIcon3.src = "https://openweathermap.org/img/w/"+icon3+".png"
+    weatherIcon3.src = "https://openweathermap.org/img/w/"+icon3+".png";
     // day three temp
     var currentTemp3 = document.createElement("div");
     currentTemp3.className = "current-temp3 mb-1";
     var currentTempK3 = city.list[23].main.temp;
     var currentTempF3 = ((currentTempK3 - 273.15) * 1.8) + 32;
-    currentTemp3.textContent = "Temperature: " + currentTempF3.toFixed() + " ℉"
+    currentTemp3.textContent = "Temperature: " + currentTempF3.toFixed() + " ℉";
     // day three wind
     var currentWind3 = document.createElement("div");
     currentWind3.className = "current-wind3 mb-1";
     currentWind3.textContent = "Wind: " + city.list[23].wind.speed + " MPH";
     // day three humidity
     var currentHumidity3 = document.createElement("div");
-    currentHumidity3.className = "current-humidity3 mb-2"
+    currentHumidity3.className = "current-humidity3 mb-2";
     currentHumidity3.textContent = "Humidity: " + city.list[23].main.humidity + " %";
 
     // day four container
@@ -150,20 +143,20 @@ var displayFiveDay = function(city) {
     var icon4 = city.list[31].weather[0].icon;
     var weatherIcon4 = document.createElement("img");
     weatherIcon4.className = "weather-icon4 mx-auto d-block";
-    weatherIcon4.src = "https://openweathermap.org/img/w/"+icon4+".png"
+    weatherIcon4.src = "https://openweathermap.org/img/w/"+icon4+".png";
     // day four temp
     var currentTemp4 = document.createElement("div");
     currentTemp4.className = "current-temp4 mb-1";
     var currentTempK4 = city.list[31].main.temp;
     var currentTempF4 = ((currentTempK4 - 273.15) * 1.8) + 32;
-    currentTemp4.textContent = "Temperature: " + currentTempF4.toFixed() + " ℉"
+    currentTemp4.textContent = "Temperature: " + currentTempF4.toFixed() + " ℉";
     // day four wind
     var currentWind4 = document.createElement("div");
     currentWind4.className = "current-wind4 mb-1";
     currentWind4.textContent = "Wind: " + city.list[31].wind.speed + " MPH";
     // day four humidity
     var currentHumidity4 = document.createElement("div");
-    currentHumidity4.className = "current-humidity4 mb-2"
+    currentHumidity4.className = "current-humidity4 mb-2";
     currentHumidity4.textContent = "Humidity: " + city.list[31].main.humidity + " %";
 
     // day five container
@@ -178,7 +171,7 @@ var displayFiveDay = function(city) {
     var icon5 = city.list[39].weather[0].icon;
     var weatherIcon5 = document.createElement("img");
     weatherIcon5.className = "weather-icon5 mx-auto d-block";
-    weatherIcon5.src = "https://openweathermap.org/img/w/"+icon5+".png"
+    weatherIcon5.src = "https://openweathermap.org/img/w/"+icon5+".png";
     // day five temp
     var currentTemp5 = document.createElement("div");
     currentTemp5.className = "current-temp5 mb-1";
@@ -191,7 +184,7 @@ var displayFiveDay = function(city) {
     currentWind5.textContent = "Wind: " + city.list[39].wind.speed + " MPH";
     // day five humidity
     var currentHumidity5 = document.createElement("div");
-    currentHumidity5.className = "current-humidity5 mb-2"
+    currentHumidity5.className = "current-humidity5 mb-2";
     currentHumidity5.textContent = "Humidity: " + city.list[39].main.humidity + " %";
     fiveDay.appendChild(dayOne);
     dayOne.append(dateOne, weatherIcon, currentTemp, currentWind, currentHumidity);
@@ -206,7 +199,7 @@ var displayFiveDay = function(city) {
 };
 
 var fetchResults = function(cityInput) {
-var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=40aa3e5aaeb88d084ff46beb25e47310";
+var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}`;
 
 fetch(apiUrl)
     .then(function (response) {
@@ -230,7 +223,7 @@ var handleSearch = function() {
         notify.classList.remove("hidden");
     } else {
         fetchResults(search);
-
+        search = "";
         console.log(search);
     }
 };
@@ -248,7 +241,7 @@ var saveSearchedCity = function(search) {
         localStorage.setItem("previousCity", JSON.stringify(previousCity));
         postPreviousCity();
     }
-}
+};
 
 var postPreviousCity = function() {
         searchHistory.innerHTML = "";
@@ -256,9 +249,21 @@ var postPreviousCity = function() {
         var previousSearchBtn = document.createElement("button")
         previousSearchBtn.className = "previous-btn btn-lg btn-dark w-100 my-2 border border-white"
         previousSearchBtn.textContent = previousCity[i];
-        searchHistory.appendChild(previousSearchBtn);
+        if (searchHistory.innerHTML === null) {
+            return;
         }
+        searchHistory.appendChild(previousSearchBtn);
+        previousSearchBtn.addEventListener("click", (event) => {
+            var rePopBtn = event.target.innerHTML
+            fetchResults(rePopBtn);
+        })
+    }
 };
 
+
+
+clearSearchBtn.addEventListener("click", function() {
+    localStorage.clear();
+  });
 
 postPreviousCity();
