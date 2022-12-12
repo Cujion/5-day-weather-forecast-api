@@ -70,13 +70,13 @@ var displayFiveDay = function(city) {
     weatherIcon.src = "https://openweathermap.org/img/w/"+icon+".png"
     // current temp 
     var currentTemp = document.createElement("div");
-    currentTemp.className = "current-temp ";
+    currentTemp.className = "current-temp";
     var currentTempK = city.list[7].main.temp;
     var currentTempF = ((currentTempK - 273.15) * 1.8) + 32;
     currentTemp.textContent = "Temperature: " + currentTempF.toFixed() + " ℉"
     // current wind
     var currentWind = document.createElement("div");
-    currentWind.className = "current-wind ";
+    currentWind.className = "current-wind";
     currentWind.textContent = "Wind: " + city.list[7].wind.speed + " MPH";
     // current humidity
     var currentHumidity = document.createElement("div");
@@ -150,17 +150,17 @@ var displayFiveDay = function(city) {
     // weather icon
     var icon4 = city.list[31].weather[0].icon;
     var weatherIcon4 = document.createElement("img");
-    weatherIcon4.className = "weather-icon mx-auto d-block";
+    weatherIcon4.className = "weather-icon4 mx-auto d-block";
     weatherIcon4.src = "https://openweathermap.org/img/w/"+icon4+".png"
     // current temp 
     var currentTemp4 = document.createElement("div");
-    currentTemp4.className = "current-temp4 ";
+    currentTemp4.className = "current-temp4";
     var currentTempK4 = city.list[31].main.temp;
     var currentTempF4 = ((currentTempK4 - 273.15) * 1.8) + 32;
     currentTemp4.textContent = "Temperature: " + currentTempF4.toFixed() + " ℉"
     // current wind
     var currentWind4 = document.createElement("div");
-    currentWind4.className = "current-wind4 ";
+    currentWind4.className = "current-wind4";
     currentWind4.textContent = "Wind: " + city.list[31].wind.speed + " MPH";
     // current humidity
     var currentHumidity4 = document.createElement("div");
@@ -188,7 +188,7 @@ var displayFiveDay = function(city) {
     currentTemp5.textContent = "Temperature: " + currentTempF5.toFixed() + " ℉"
     // current wind
     var currentWind5 = document.createElement("div");
-    currentWind5.className = "current-wind ";
+    currentWind5.className = "current-wind5";
     currentWind5.textContent = "Wind: " + city.list[39].wind.speed + " MPH";
     // current humidity
     var currentHumidity5 = document.createElement("div");
