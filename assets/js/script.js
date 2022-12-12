@@ -11,8 +11,7 @@
 var cityInput = document.querySelector("#city-input");
 var searchBtn = document.querySelector("#searchbtn");
 var notify = document.querySelector("#notify");
-var searchHistory = document.querySelector("search-history");
-// var previousSearch = document.querySelector("#previous-search");
+var searchHistory = document.querySelector("#search-history");
 var weatherContainer = document.querySelector("#weather-container");
 var currentDay = document.querySelector("#current-day");
 var fiveDay = document.querySelector("#five-day");
@@ -28,7 +27,7 @@ var displayCurrentCity = function(city) {
     // current city name
     var cityName = document.createElement("h2");
     cityName.className = "city-name text-center";
-    cityName.textContent = city.name + " " + "(" + dayjs().format("M/D/YYYY") + ")";
+    cityName.textContent = city.city.name + " " + "(" + dayjs().format("M/D/YYYY") + ")";
     console.log(cityName.innerHTML)
     // current weather icon
     var icon = city.list[0].weather[0].icon;
@@ -214,6 +213,7 @@ fetch(apiUrl)
         return response.json();
     })
     .then(function (data) {
+        saveSearchedCity(data.city.name);
         console.log(data);
         displayCurrentCity(data);
         displayFiveDay(data);
@@ -230,6 +230,7 @@ var handleSearch = function() {
         notify.classList.remove("hidden");
     } else {
         fetchResults(search);
+
         console.log(search);
     }
 };
@@ -238,7 +239,7 @@ searchBtn.addEventListener("click", handleSearch);
 
 var previousCity = JSON.parse(localStorage.getItem("previousCity") || "[]");
 
-var SaveSearchedCity = function(search) {
+var saveSearchedCity = function(search) {
     var search = cityInput.value.trim();
     if (previousCity.includes(search)) {
         return;
@@ -250,17 +251,14 @@ var SaveSearchedCity = function(search) {
 }
 
 var postPreviousCity = function() {
-    // if (previousCity.length > 0) {
-    //     searchHistory.innerHTML = "";
+        searchHistory.innerHTML = "";
     for (i = 0; i < previousCity.length; i++) {
         var previousSearchBtn = document.createElement("button")
         previousSearchBtn.className = "previous-btn btn-lg btn-dark w-100 my-2 border border-white"
         previousSearchBtn.textContent = previousCity[i];
         searchHistory.appendChild(previousSearchBtn);
         }
-    // } else {
-    //     searchHistory.innerHTML = "";
-    // }
-}
+};
+
 
 postPreviousCity();
