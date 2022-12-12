@@ -9,7 +9,7 @@
 
 
 ## Description
-* This application is an open weather api that allows you to search any city in the search input and it will display the current days weather as the main content area along with the following five day forecast below. This application uses an abundance of third party apis including dayjs to display the date, google font, jquery, along with bootstrap for easier html and javascript styling. This server sided open weather api allows you to understand how to manipulate data given to you through fetch and requests and then being able to understand what information you need from the data given and then displaying it on your webpage.  
+* This application is an open weather api that allows you to search any city in the search input and it will display the current days weather as the main content area along with the following five day forecast below. This application uses an abundance of third party apis including dayjs to display the date, google font, jquery, along with bootstrap for easier html and javascript styling. This server sided open weather api allows you to understand how to manipulate data given to you through fetch and requests and then being able to understand what information you need from the data given and then displaying it on the webpage.  
 
 ## Visuals
 ![Page overview](./assets/images/homepage.png)
