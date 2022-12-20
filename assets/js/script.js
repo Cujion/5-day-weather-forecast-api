@@ -248,12 +248,11 @@ var postPreviousCity = function() {
         }
         searchHistory.appendChild(previousSearchBtn);
         previousSearchBtn.addEventListener("click", (event) => {
-            var rePopBtn = event.target.innerHTML
+            var rePopBtn = event.target.innerHTML;
             fetchResults(rePopBtn);
         })
     }
 };
-
 
 // clear search button to clear local storage on click
 clearSearchBtn.addEventListener("click", function() {
